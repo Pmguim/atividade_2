@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exibir Numeros Pares</title>
+  </head>
+  <body>
+    <h1>Exibir Numeros Pares</h1>
+    
+    <label for="numberInput">Informe um numero:</label>
+    <input type="number" id="numberInput" />
+    <button onclick="exibirNumerosPares()">Exibir</button>
+    
+    <h2>Numeros Pares:</h2>
+    <ul id="result"></ul>
+    
+    <h2>Soma Total:</h2>
+    <p id="sum"></p>
+
+    <script>
+      function exibirNumerosPares() {
+        var input = document.getElementById("numberInput");
+        var number = parseInt(input.value);
+        var resultElement = document.getElementById("result");
+        var sumElement = document.getElementById("sum");
+        
+        resultElement.innerHTML = "";
+        var sum = 0;
+        
+        for (var i = 1; i <= number; i++) {
+          if (i % 2 === 0) {
+            var li = document.createElement("li");
+            li.appendChild(document.createTextNode(i));
+            resultElement.appendChild(li);
+            sum += i;
+          }
+        }
+        
+        sumElement.innerHTML = sum;
+      }
+    </script>
+  </body>
+</html>

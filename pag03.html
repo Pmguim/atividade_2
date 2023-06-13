@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Vendas</title>
+    <script>
+        function calcularTotal() {
+            var produto1 = {
+                nome: document.getElementById("nomeProduto1").value,
+                valor: parseFloat(document.getElementById("valorProduto1").value),
+                quantidade: parseInt(document.getElementById("quantidadeProduto1").value)
+            };
+
+            var produto2 = {
+                nome: document.getElementById("nomeProduto2").value,
+                valor: parseFloat(document.getElementById("valorProduto2").value),
+                quantidade: parseInt(document.getElementById("quantidadeProduto2").value)
+            };
+
+            var produto3 = {
+                nome: document.getElementById("nomeProduto3").value,
+                valor: parseFloat(document.getElementById("valorProduto3").value),
+                quantidade: parseInt(document.getElementById("quantidadeProduto3").value)
+            };
+
+            var valorTotal = (produto1.valor * produto1.quantidade) + (produto2.valor * produto2.quantidade) + (produto3.valor * produto3.quantidade);
+            
+            document.getElementById("resultado").innerHTML = "Valor total da venda: R$ " + valorTotal.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculadora de Vendas</h1>
+
+    <label for="nomeProduto1">Produto 1:</label>
+    <input type="text" id="nomeProduto1" name="nomeProduto1" required><br>
+
+    <label for="valorProduto1">Valor:</label>
+    <input type="number" id="valorProduto1" name="valorProduto1" step="0.01" required><br>
+
+    <label for="quantidadeProduto1">Quantidade:</label>
+    <input type="number" id="quantidadeProduto1" name="quantidadeProduto1" required><br><br>
+
+    <label for="nomeProduto2">Produto 2:</label>
+    <input type="text" id="nomeProduto2" name="nomeProduto2" required><br>
+
+    <label for="valorProduto2">Valor:</label>
+    <input type="number" id="valorProduto2" name="valorProduto2" step="0.01" required><br>
+
+    <label for="quantidadeProduto2">Quantidade:</label>
+    <input type="number" id="quantidadeProduto2" name="quantidadeProduto2" required><br><br>
+
+    <label for="nomeProduto3">Produto 3:</label>
+    <input type="text" id="nomeProduto3" name="nomeProduto3" required><br>
+
+    <label for="valorProduto3">Valor:</label>
+    <input type="number" id="valorProduto3" name="valorProduto3" step="0.01" required><br>
+
+    <label for="quantidadeProduto3">Quantidade:</label>
+    <input type="number" id="quantidadeProduto3" name="quantidadeProduto3" required><br><br>
+
+    <button onclick="calcularTotal()">Calcular Total</button><br><br>
+
+    <div id="resultado"></div>
+</body>
+</html>

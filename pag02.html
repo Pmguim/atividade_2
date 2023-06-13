@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conversor de Temperatura</title>
+    <script>
+        function converterTemperatura() {
+            var temperatura = parseFloat(document.getElementById("temperatura").value);
+            var resultado = document.getElementById("resultado");
+
+            var tipoConversao = document.getElementById("tipoConversao").value;
+
+            if (tipoConversao === "fahrenheit") {
+                var fahrenheit = temperatura * 1.8 + 32;
+                resultado.innerHTML = temperatura + "°C equivalem a " + fahrenheit + "°F";
+            } else if (tipoConversao === "celsius") {
+                var celsius = (temperatura - 32) / 1.8;
+                resultado.innerHTML = temperatura + "°F equivalem a " + celsius + "°C";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Conversor de Temperatura</h1>
+    <label for="temperatura">Temperatura:</label>
+    <input type="number" id="temperatura" name="temperatura" required><br><br>
+
+    <label for="tipoConversao">Converter para:</label>
+    <select id="tipoConversao" name="tipoConversao" required>
+        <option value="fahrenheit">Fahrenheit</option>
+        <option value="celsius">Celsius</option>
+    </select><br><br>
+
+    <button onclick="converterTemperatura()">Converter</button><br><br>
+
+    <div id="resultado"></div>
+</body>
+</html>

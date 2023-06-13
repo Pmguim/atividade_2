@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Valores do Vetor</title>
+  <style>
+    .container {
+      margin: 20px;
+    }
+
+    input[type="number"] {
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Inserir Valores</h1>
+    <input type="number" id="valor" placeholder="Digite um valor">
+    <button onclick="inserirValor()">Inserir</button>
+    <br>
+    <button onclick="mostrarValores()">Mostrar Valores</button>
+    <button onclick="mostrarMaiorValor()">Maior Valor</button>
+    <button onclick="mostrarMenorValor()">Menor Valor</button>
+    <br>
+    <div id="valoresInseridos"></div>
+    <div id="maiorValor"></div>
+    <div id="menorValor"></div>
+  </div>
+
+  <script>
+    var valores = [];
+
+    function inserirValor() {
+      var valorInput = document.getElementById("valor");
+      var valor = parseInt(valorInput.value);
+
+      if (!isNaN(valor)) {
+        valores.push(valor);
+        valorInput.value = "";
+      }
+    }
+
+    function mostrarValores() {
+      var valoresInseridos = document.getElementById("valoresInseridos");
+      valoresInseridos.innerHTML = "Valores Inseridos: " + valores.join(", ");
+    }
+
+    function mostrarMaiorValor() {
+      var maiorValor = Math.max.apply(null, valores);
+      var maiorValorElement = document.getElementById("maiorValor");
+      maiorValorElement.innerHTML = "Maior Valor: " + maiorValor;
+    }
+
+    function mostrarMenorValor() {
+      var menorValor = Math.min.apply(null, valores);
+      var menorValorElement = document.getElementById("menorValor");
+      menorValorElement.innerHTML = "Menor Valor: " + menorValor;
+    }
+  </script>
+</body>
+</html>

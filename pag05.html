@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Custo para Assentar Piso</title>
+    <script>
+        function calcularCusto() {
+            var comprimento = parseFloat(document.getElementById("comprimento").value);
+            var largura = parseFloat(document.getElementById("largura").value);
+            var precoPorMetroQuadrado = 36.00;
+
+            var area = comprimento * largura;
+            var custoTotal = area * precoPorMetroQuadrado;
+            
+            document.getElementById("resultado").innerHTML = "Custo total para assentar piso: R$ " + custoTotal.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculadora de Custo para Assentar Piso</h1>
+
+    <label for="comprimento">Comprimento do cômodo (em metros):</label>
+    <input type="number" id="comprimento" name="comprimento" step="0.01" required><br>
+
+    <label for="largura">Largura do cômodo (em metros):</label>
+    <input type="number" id="largura" name="largura" step="0.01" required><br><br>
+
+    <button onclick="calcularCusto()">Calcular Custo</button><br><br>
+
+    <div id="resultado"></div>
+</body>
+</html>
